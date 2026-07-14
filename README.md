@@ -83,6 +83,28 @@ FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key
 
 **Important**: You must set at least one LLM API key (e.g. `OPENAI_API_KEY`, `GROQ_API_KEY`, `ANTHROPIC_API_KEY`, or `DEEPSEEK_API_KEY`) for the hedge fund to work. 
 
+### Optional: use ChatGPT/Codex OAuth
+
+The CLI can use an existing Codex login through an experimental, optional
+provider instead of `OPENAI_API_KEY`. This is separate from the standard OpenAI
+Platform API path and is restricted to the ChatGPT Codex Responses endpoint.
+
+```bash
+poetry install -E codex
+poetry run ai-hedge-fund-provider login openai-codex
+poetry run ai-hedge-fund-provider status openai-codex
+```
+
+Then select the Codex model explicitly:
+
+```bash
+poetry run python src/main.py --ticker AAPL --analysts technical_analyst --model openai-codex/gpt-5.4
+```
+
+Codex OAuth replaces only the LLM API key. A valid
+`FINANCIAL_DATASETS_API_KEY` is still required for the project's market and
+fundamental data requests.
+
 ## How to Run
 
 ### ⌨️ Command Line Interface

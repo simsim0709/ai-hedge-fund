@@ -2287,6 +2287,24 @@ files = [
 ]
 
 [[package]]
+name = "oauth-cli-kit"
+version = "0.1.6"
+description = "Reusable OAuth 2.0 + PKCE helpers for CLI applications"
+optional = true
+python-versions = ">=3.11"
+files = [
+    {file = "oauth_cli_kit-0.1.6-py3-none-any.whl", hash = "sha256:d4a73beae7333ae642a9e5766ab0a04de53279667fefdf064c23db77a3494e7f"},
+    {file = "oauth_cli_kit-0.1.6.tar.gz", hash = "sha256:7252f57e1a2f9dba7a94894c11b979f83884b3c88af3b4fe0206370a2b120499"},
+]
+
+[package.dependencies]
+httpx = ">=0.26.0"
+platformdirs = ">=4.0.0"
+
+[package.extras]
+dev = ["pytest (>=8.0.0)"]
+
+[[package]]
 name = "ollama"
 version = "0.6.0"
 description = "The official Python client for Ollama."
@@ -4476,7 +4494,10 @@ files = [
 [package.extras]
 cffi = ["cffi (>=1.17,<2.0)", "cffi (>=2.0.0b)"]
 
+[extras]
+codex = ["oauth-cli-kit"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "cbe9eb8139f179bd70385897b8d6da0af88dde72a3e1108e3618e37bcaa0d718"
+content-hash = "b3d1e0ac923433cd65a227476c7dd6241a3b5df05e232dbfb6cddf724d5b5d46"
